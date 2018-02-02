@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "709955835798",
+    "firebase_url": "https://pokeney-app.firebaseio.com",
+    "project_id": "pokeney-app",
+    "storage_bucket": "pokeney-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709955835798:android:75377ae5dbe7dea0",
+        "android_client_info": {
+          "package_name": "me.ryangallaway.pokeney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709955835798-9qhovi6eepsdth6sjm1so49pvt918mm8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.ryangallaway.pokeney",
+            "certificate_hash": "b1c2cc9806eaf4d0551b215028b4b2e73ade179b"
+          }
+        },
+        {
+          "client_id": "709955835798-jf866p7tnlf6ofleplv31s17dpq8q7p7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc-ww3y1k-6DorSels9iKQXkHz0P2ajok"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709955835798-jf866p7tnlf6ofleplv31s17dpq8q7p7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
