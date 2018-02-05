@@ -178,8 +178,9 @@ public class NavDrawerActivity extends AppCompatActivity
     public void onAddButtonPressed(View v) {
         DateFormat dateFormat = SimpleDateFormat.getDateTimeInstance();
         Poke newPoke = new Poke(currentUser.getDisplayName(), dateFormat.format(new Date()));
+        String key = db.child("pokes").push().getKey();
         Map<String, Object> pokeUpdate = new HashMap<>();
-        pokeUpdate.put("/pokes/" + newPoke.id, newPoke);
+        pokeUpdate.put("/pokes/" + key, newPoke);
         db.updateChildren(pokeUpdate);
     }
 }
