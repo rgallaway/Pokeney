@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.Sampler;
+import android.service.autofill.Dataset;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
@@ -31,7 +32,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -87,10 +87,13 @@ public class NavDrawerActivity extends AppCompatActivity
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // get Poke and update ListView
-                Poke poke = dataSnapshot.child("pokes").getValue(Poke.class);
-                if (poke != null) {
-                    pokeList.add(poke);
-                    adapter.notifyDataSetChanged();
+                pokeList.clear();
+                for (DataSnapshot pokes: dataSnapshot.child("pokes").getChildren()) {
+                    Poke poke = pokes.getValue(Poke.class);
+                    if (poke != null) {
+                        pokeList.add(poke);
+                        adapter.notifyDataSetChanged();
+                    }
                 }
             }
 
@@ -176,7 +179,7 @@ public class NavDrawerActivity extends AppCompatActivity
         DateFormat dateFormat = SimpleDateFormat.getDateTimeInstance();
         Poke newPoke = new Poke(currentUser.getDisplayName(), dateFormat.format(new Date()));
         Map<String, Object> pokeUpdate = new HashMap<>();
-        pokeUpdate.put("/pokes/", newPoke);
+        pokeUpdate.put("/pokes/" + newPoke.id, newPoke);
         db.updateChildren(pokeUpdate);
     }
 }
