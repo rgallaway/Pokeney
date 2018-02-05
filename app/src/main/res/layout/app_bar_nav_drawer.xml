@@ -20,6 +20,25 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_nav_drawer" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_nav_drawer" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="onAddButtonPressed"
+        android:paddingBottom="@dimen/action_button_margin"
+        android:paddingRight="@dimen/action_button_margin"
+        android:visibility="visible"
+        app:backgroundTint="?android:attr/colorPrimaryDark"
+        app:elevation="16dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/pokeList"
+        app:layout_anchorGravity="bottom|right"
+        app:rippleColor="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_add_black_24dp" />
 
 </android.support.design.widget.CoordinatorLayout>
